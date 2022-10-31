@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item px-1">
+        <li class="nav-item pe-1">
           <% if (title == "Home") { %>
           <a class="nav-link active" aria-current="page" href="/home">
           <% } else { %>
@@ -58,21 +58,21 @@
         </li>
 
         <% if(displayName) { %>
-          <li class="nav-item">
+          <li class="nav-item px-1">
             <a class="nav-link <%= (page == 'contact-list') ? 'active' : ''; %>" aria-current="page" href="/contact-list"><i class="fa-solid fa-address-book fa-lg"></i> Contact List</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-1">
             <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i>
               Logout</a>
           </li>
           <% } else { %>
-            <li class="nav-item">
+            <li class="nav-item px-1">
               <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i
                   class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>
             </li>
           <% } %>
 
-        <li class="nav-item ps-1">
+        <li class="nav-item">
           <a class="nav-link disabled"><%= displayName %></a>
         </li>
       </ul>

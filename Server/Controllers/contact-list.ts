@@ -16,7 +16,7 @@ export function DisplayContactListPage(req: express.Request, res: express.Respon
         console.error(err.message);
         res.end(err);
       }
-      res.render('index', { title: 'Contact List', page: 'contact-list', contacts: contactsCollection, displayName:  UserDisplayName(req)  });
+      res.render('index', { title: 'Contact List', page: 'contact-list', contacts: contactsCollection.sort((a, b) => a.First_name.localeCompare(b.First_name)), displayName:  UserDisplayName(req)  });
     });
 }
 

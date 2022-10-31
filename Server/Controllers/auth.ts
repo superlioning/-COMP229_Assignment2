@@ -32,24 +32,24 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
 {
     passport.authenticate('local', function(err, user, info)
     {
-        // are there server errors?
+        // If there are server errors
         if(err)
         {
             console.error(err);
             res.end(err);
         }
 
-        // are there login errors?
+        // If there are login errors
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error!');
             return res.redirect('/login');
         }
 
-        // no problems - we have a good username and password combination
+        // If no above problems then the user has a good username and password combination
         req.logIn(user, function(err)
         {
-            // are there db errors?
+            // If there are db errors
             if(err)
             {
                 console.error(err);
@@ -89,7 +89,7 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
             return res.redirect('/register');
         }
 
-        // if everything is ok - user has been registered
+        // if everything is ok then the user has been registered
 
         // automatically login the user
         return passport.authenticate('local')(req, res, function()

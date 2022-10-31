@@ -12,7 +12,7 @@ function DisplayContactListPage(req, res, next) {
             console.error(err.message);
             res.end(err);
         }
-        res.render('index', { title: 'Contact List', page: 'contact-list', contacts: contactsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.render('index', { title: 'Contact List', page: 'contact-list', contacts: contactsCollection.sort((a, b) => a.First_name.localeCompare(b.First_name)), displayName: (0, Util_1.UserDisplayName)(req) });
     });
 }
 exports.DisplayContactListPage = DisplayContactListPage;
