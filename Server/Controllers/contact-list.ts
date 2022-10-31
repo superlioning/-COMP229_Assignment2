@@ -39,7 +39,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
     }
 
     // show the edit view with the data
-    res.render('index', { title: 'Edit', page: 'edit', contact: contactToEdit, displayName:  UserDisplayName(req) })
+    res.render('index', { title: 'Edit', page: 'edit', contact: contactToEdit, displayName:  UserDisplayName(req), id: id })
   });
 }
 
