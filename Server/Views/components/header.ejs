@@ -14,7 +14,9 @@
     <!--Reset footer position on specific pages-->
     <% if(page=="edit" || page=="contact-list" || page=="login" ) { %>
     <style>
-      footer {position: fixed;}
+      html {position: relative; min-height: 100%;}
+      body {margin: 0 0 110px;}
+      footer {position: absolute;}
     </style>
     <% } %>
 
